@@ -1,0 +1,10 @@
+Filkom News
+
+Fungsionalitas
+1.	Menampilkan Berita
+2.	Kategori
+3.	Menampilkan video
+4.	Share facebook
+5.	Favorit
+6.	Trending
+7.	Pemberitahuan
