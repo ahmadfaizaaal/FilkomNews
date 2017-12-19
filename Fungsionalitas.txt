@@ -2,9 +2,11 @@ Filkom News
 
 Fungsionalitas
 1.	Menampilkan Berita
-2.	Kategori
-3.	Menampilkan video
-4.	Share facebook
-5.	Favorit
-6.	Trending
-7.	Pemberitahuan
+2.	Zoom gambar
+3.	Share socmed (Facebook, Twitter, Line)
+4.	Pencarian berita
+5. 	Slider berita terbaru
+6.	Initial view
+7.	Bookmark
+8.	Pemberitahuan
+9. 	Ganti View
