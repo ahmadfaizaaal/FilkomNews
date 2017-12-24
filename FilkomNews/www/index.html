@@ -1,11 +1,61 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-        <title>Blank App</title>
-    </head>
-    <body>
-        <script type="text/javascript" src="cordova.js"></script>
-    </body>
-</html>
+<head>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<div id="login">
+		<h1 id="txt_nama">Nama</h1>		
+		<h1 id="txt_nim">NIM</h1>		
+		<button id="btn_back">Back</button>
+		<button id="btn_next">Next</button>
+	</div>
+<script type="text/javascript">
+	// $(function(){
+		$panjang = 0;
+		$iterator = 0;
+
+		$.ajax({
+			method: "POST",
+			url: "ajax.php",
+			dataType:'json'
+		}).done(function(data){
+			$panjang = data.length;
+			$('#txt_nama').html(data[0].post_title);
+			$('#txt_nim').html(data[0].user_id);
+		});
+
+
+		$('#btn_back').click(function(){
+			$.ajax({
+				method: "POST",
+				url: "ajax.php",
+				dataType:'json'
+			}).done(function(data){
+				if ($iterator > 0){
+					$('#txt_nama').html(data[--$iterator].post_title);
+					$('#txt_nim').html(data[$iterator].user_id);
+				} else {
+					$('#txt_nama').html(data[$iterator].post_title);
+					$('#txt_nim').html(data[$iterator].user_id);
+				}
+			});
+		});
+
+		$('#btn_next').click(function(){
+			$.ajax({
+				method: "POST",
+				url: "ajax.php",
+				dataType:'json'
+			}).done(function(data){
+				if ($iterator < $panjang - 1){
+					$('#txt_nama').html(data[++$iterator].post_title);
+					$('#txt_nim').html(data[$iterator].user_id);
+				} else {
+					$('#txt_nama').html(data[$iterator].post_title);
+					$('#txt_nim').html(data[$iterator].user_id);
+				}
+			});
+		});
+	// });
+</script>
+
+</body>
