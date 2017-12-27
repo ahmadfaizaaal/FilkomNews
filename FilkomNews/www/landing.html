@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">        
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">    
+    <script src="js/jquery-1.11.1.min.js"></script>    
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+  <!-- Start of first page -->
+  <div data-role="page" id="page-one">
+    <div data-role="header" data-position="fixed" style="background-color: red;">
+      <a href="#mypanel1" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all"></a>
+      <a href="" class="ui-btn-right ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all"></a>
+      <h1>Foto</h1>
+    </div><!-- /header -->
+    <div role="main" class="ui-content">
+      <center><img src="gusna.JPG" width="100%" height=auto></img></center>
+      <center><h2> Hello World, Saya Gusna</h2></center>
+    </div><!-- /content -->
+    <div data-role="footer" data-position="fixed">
+      <h2>Gusna Ikhsan-155150200111272</h2>
+    </div><!-- /footer -->
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="a" id="mypanel1">
+      <ul data-role="listview">
+        <li data-icon="delete"><a href="#" data-rel="close">Keluar</a></li>
+        <li><a href="#page-one">Foto Saya</a></li>
+        <li><a href="#page-two">Biodata Saya</a></li>
+        <li><a href="#page-three">Mata Kuliah Saya</a></li>
+      </ul>
+    </div><!-- /panel -->
+  </div><!-- /page --> 
+</body>
+</html>
