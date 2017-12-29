@@ -19,7 +19,7 @@
 </head>
 <body>
   <!-- Start of first page -->
-  <div data-role="page" id="page-one" class="halaman_awal" data-theme="b">
+  <div data-role="page" id="page-one" class="halaman_awal ui-page-active" data-theme="b">
     <div data-role="header" data-position="fixed" style="background-color: #d30000;">
       <a href="#mypanel1" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-alt-icon ui-nodisc-icon"></a>
       <a href="" class="ui-btn-right ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all ui-alt-icon ui-nodisc-icon"></a>
@@ -39,33 +39,9 @@
                 <p>Here some text.</p>
             </div><!-- /popup -->
         </div><!-- /content -->
-      </div>
+      </div>     
       
-      <ul data-role ="listview" data-inset="true" class="ui-nodisc-icon">
-        <li>
-          <a href="">
-            <div>
-              <img src="/FilkomNews/FilkomNews/www/you tube.png" style="max-width: 108%; min-width: 108%">
-            </div>                         
-            <h2>Mahasiswi FILKOM Juara 2 Puteri Kampus Jawa Timur 2017</h2>            
-            <div class="ui-grid-b">
-              <div class="ui-block-a">
-                <p class="ui-corner-all ui-shadow" style="background-color: grey; color: white; text-align: center;">14-12-2017</p>
-              </div>
-              <div class="ui-block-b">
-                <p class="ui-corner-all ui-shadow" style="background-color: red; color: white; text-align: center;">10:20</p>
-              </div>
-              <div class="ui-block-c">
-                <!-- <p class="ui-corner-all ui-shadow">10:20</p> -->
-              </div>
-            </div>
-            <!-- <div style="text-align: right; margin-right: -25px;">
-              <img src="/FilkomNews/FilkomNews/www/lace.png" style="max-width: 25px; min-width: 25px;">       
-            </div> -->
-          </a>
-        </li>        
-      </ul>
-      
+      <!--
       <ul data-role ="listview" data-inset="true" class="ui-nodisc-icon">
         <li>
           <a href="">
@@ -81,38 +57,15 @@
                 <p class="ui-corner-all ui-shadow" style="background-color: red; color: white; text-align: center;">10:20</p>
               </div>
               <div class="ui-block-c">
-                <!-- <p class="ui-corner-all ui-shadow">10:20</p> -->
+                
               </div>
             </div>
 
           </a>
         </li>        
-      </ul>
-      
-      <ul data-role ="listview" data-inset="true" class="ui-nodisc-icon">
-        <li>
-          <a href="">
-            <div>
-              <img src="/FilkomNews/FilkomNews/www/pemandangan.jpg" style="max-width: 108%; min-width: 108%">       
-            </div>                         
-            <h2>Mahasiswi FILKOM Juara 2 Puteri Kampus Jawa Timur 2017</h2>            
-            <div class="ui-grid-b">
-              <div class="ui-block-a">
-                <p class="ui-corner-all ui-shadow" style="background-color: grey; color: white; text-align: center;">14-12-2017</p>
-              </div>
-              <div class="ui-block-b">
-                <p class="ui-corner-all ui-shadow" style="background-color: red; color: white; text-align: center;">10:20</p>
-              </div>
-              <div class="ui-block-c">
-                <!-- <p class="ui-corner-all ui-shadow">10:20</p> -->
-              </div>
-            </div>
-
-          </a>
-        </li>        
-      </ul>
-      
-    </div><!-- /content -->
+      </ul>      
+    </div>
+    <!-- /content -->
     
     <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="a" id="mypanel1">
       <ul data-role="listview">
@@ -125,6 +78,8 @@
 
 <script type="text/javascript">
   // $(function(){
+    window.location.hash = 'page-1';
+    $.mobile.initializePage();
     $panjang = 0;
     $iterator = 0;
 
@@ -135,9 +90,41 @@
     }).done(function(data){     
       $panjang = data.length;                     
       for (var i = 0; i < $panjang; i++) {                
+        // Menambahkan Tumbnails
         $time_modified = data[i].content_modified.split(" ");
-        $("#beranda").append("<ul data-role =\"listview\" data-inset=\"true\" class=\"ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow\"><li class=\"ui-first-child ui-last-child\"><a href=\"\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><div><img src=\"http://file.filkom.ub.ac.id/fileupload/assets/"+data[i].thumb_img+"\" style=\"max-width: 108%; min-width: 108%\"><h2>"+data[i].post_title+"</h2><div class=\"ui-grid-b\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">"+$time_modified[0]+"</p> </div> <div class=\"ui-block-b\"> <p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">"+$time_modified[1].substring(0,5)+"</p> </div> <div class=\"ui-block-c\"></div></div></div>");
+        $("#beranda").append("<ul data-role =\"listview\" data-inset=\"true\" class=\"ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow\"><li class=\"ui-first-child ui-last-child\"><a href=\"#page-"+(i+1)+"\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><div><img src=\"http://file.filkom.ub.ac.id/fileupload/assets/"+data[i].thumb_img+"\" style=\"max-width: 108%; min-width: 108%\"><h2>"+data[i].post_title+"</h2><div class=\"ui-grid-b\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">"+$time_modified[0]+"</p> </div> <div class=\"ui-block-b\"> <p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">"+$time_modified[1].substring(0,5)+"</p> </div> <div class=\"ui-block-c\"></div></div></div>");
         $("#beranda").append("</a></li></ul>");
+        $("body").append("<div data-role=\"page\" id=\"page-"+(i+1)+"\" data-theme=\"b\" data-url=\"page-"+(i+1)+"\" tabindex=\"0\" class=\"ui-page ui-page-theme-b ui-page-header-fixed\" style=\"padding-top: 44px;\"><div align=\"right\" data-role=\"header\" data-position=\"fixed\" style=\"background-color: #d30000; text-align: left;\" role=\"banner\" class=\"ui-header ui-bar-inherit ui-header-fixed slidedown\"><a href=\"#page-one\" class=\"ui-btn-left ui-alt-icon ui-nodisc-icon ui-btn ui-btn-c ui-icon-carat-l ui-btn-icon-notext ui-corner-all\" style=\"background-color: #d30000; color: white;\" data-role=\"button\" role=\"button\"></a><h2 style=\"color: white;\" class=\"ui-title\" role=\"heading\" aria-level=\"1\">Berita</h2></div><img src=\"/FilkomNews/FilkomNews/www/pemandangan.jpg\" style=\"max-width: 100%; min-width: 100%\"><div role=\"main\" class=\"ui-content\"><div><h2>Mahasiswi FILKOM Juara 2 Puteri Kampus Jawa Timur 2017"+(i+1)+"</h2></div></div>");
+
+
+// <div data-role="page" id="page-one" data-theme="b" data-url="page-one" tabindex="0" class="ui-page ui-page-theme-b ui-page-header-fixed ui-page-active" style="padding-top: 44px;">
+//     <div align="right" data-role="header" data-position="fixed" style="background-color: #d30000; text-align: left;" role="banner" class="ui-header ui-bar-inherit ui-header-fixed slidedown">
+//       <a href="#mypanel1" class="ui-btn-left ui-alt-icon ui-nodisc-icon ui-btn ui-btn-c ui-icon-carat-l ui-btn-icon-notext ui-corner-all" style="background-color: #d30000; color: white;" data-role="button" role="button"></a>
+//       <h2 style="color: white;" class="ui-title" role="heading" aria-level="1">Berita</h2>
+//     </div>
+//     <img src="/FilkomNews/FilkomNews/www/pemandangan.jpg" style="max-width: 100%; min-width: 100%">
+//     <div role="main" class="ui-content">     
+//       <div>
+//         <h2>Mahasiswi FILKOM Juara 2 Puteri Kampus Jawa Timur 2017</h2>
+//       </div>
+//       <div class="ui-grid-b" style="margin-top: -8%;">
+//               <div class="ui-block-a">
+//                 <p class="ui-corner-all ui-shadow" style="background-color: grey; color: white; text-align: center;">14-12-2017</p>
+//               </div>
+//               <div class="ui-block-b">
+//                 <p class="ui-corner-all ui-shadow" style="background-color: red; color: white; text-align: center;">10:20</p>
+//               </div>
+//               <div class="ui-block-c">
+                
+//               </div>
+//             </div>
+//       <div>
+//         <p>Teks</p>
+//       </div>
+//     </div>
+
+
+
       };
     });
 </script>
