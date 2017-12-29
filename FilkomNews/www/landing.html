@@ -4,8 +4,10 @@
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">        
   <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">    
+  <link rel="stylesheet" href="css/slider.css">    
   <script src="js/jquery-1.11.1.min.js"></script>    
-  <script src="js/jquery.mobile-1.4.5.min.js"></script>    
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/slider.js"></script>    
   
   <style type="text/css">
   .halaman_awal {
@@ -27,8 +29,18 @@
 
     <div role="main" class="ui-content" id="beranda">      
       <!-- <h3 style="text-align: center;"> Headline News</h3> -->
-      <img src="/FilkomNews/FilkomNews/www/awal.png" style="max-width: 100%; min-width: 100%">
+      <!-- <img src="/FilkomNews/FilkomNews/www/awal.png" style="max-width: 100%; min-width: 100%"> -->
       <!-- <div><h3 style="text-align: center;"> Berita</h3></div> -->
+      
+      <div data-role="page" id="city" class="demo-page" data-dom-cache="true" data-theme="b" data-prev="prevCity" data-next="nextCity" data-url="city">
+        <div role="main" class="ui-content">
+            <div id="trivia-city" class="trivia ui-content" data-role="popup" data-position-to="window" data-tolerance="50,30,30,30" data-theme="a">
+                <a href="#" data-rel="back" class="ui-btn ui-btn-right ui-btn-b ui-btn-icon-notext ui-icon-delete ui-corner-all">Close</a>
+                <p>Here some text.</p>
+            </div><!-- /popup -->
+        </div><!-- /content -->
+      </div>
+      
       <ul data-role ="listview" data-inset="true" class="ui-nodisc-icon">
         <li>
           <a href="">
@@ -104,7 +116,7 @@
     
     <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="a" id="mypanel1">
       <ul data-role="listview">
-        <li data-icon="delete"><a href="#" data-rel="close">Filkom</a></li>
+        <li class="ui-nodisc-icon"><center><a href="#" data-rel="close"><img src="/FilkomNews/FilkomNews/www/filkom.png" style="max-width: 32%; min-width: 32%;"></a></center></li>
         <li><a href="#page-one">Foto Saya</a></li>
         <li><a href="#page-two">Biodata Saya</a></li>        
       </ul>
