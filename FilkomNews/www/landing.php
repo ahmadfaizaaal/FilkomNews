@@ -111,6 +111,26 @@
     </div><!-- /panel -->
   </div><!-- /page --> 
 
+<!-- <?php echo"
+<script type=\"text/javascript\">
+   $(function(){
+    \$panjang = 0;
+    \$iterator = 0;
+
+    $.ajax({
+      type: \"POST\",
+      url: \"ajax.php\",
+      dataType:'json'
+    }).done(function(data){     
+      \$panjang = data.length;                     
+      for (var i = 0; i < \$panjang; i++) {
+        $(\"#beranda\").append(\"<h1>AS</h1>\");
+      };
+    });   
+  });
+</script>
+"?>; -->
+
 <script type="text/javascript">
   // $(function(){
     $panjang = 0;
@@ -134,35 +154,7 @@
 
         $("#beranda").append("<ul data-role =\"listview\" data-inset=\"true\" class=\"ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow\"><li class=\"ui-first-child ui-last-child\"><a href=\"\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><div><img src=\"/FilkomNews/FilkomNews/www/you tube.png\" style=\"max-width: 108%; min-width: 108%\"><h2>"+data[i].post_title+"</h2><div class=\"ui-grid-b\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">14-12-2017</p> </div> <div class=\"ui-block-b\"> <p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">10:20</p> </div> <div class=\"ui-block-c\"></div></div></div>");
         $("#beranda").append("</a></li></ul>");
-      };
-    });
-</script>
-
-</body>
-
-<!--<script type="text/javascript">
-  // $(function(){
-    $panjang = 0;
-    $iterator = 0;
-
-    $.ajax({
-      type: "POST",
-      url: "ajax.php",
-      dataType:'json'
-    }).done(function(data){     
-      $panjang = data.length;                     
-      for (var i = 0; i < $panjang; i++) {
-        // $("body").append("<img src=\"http://file.filkom.ub.ac.id/fileupload/assets/"+data[i].thumb_img+"\">");
-        // $("body").append("<h1>"+data[i].post_title+"</h1>");
-        // $time_modified = data[i].content_modified.split(" ");
-        // $("body").append("<h4>"+$time_modified[0]+"</h4>");
-        // $("body").append("<h4>"+$time_modified[1].substring(0,5)+"</h4>");
-        // $("body").append(data[i].post_content);
-
-        // $("#beranda").append("<ul data-role =\"listview\" data-inset=\"true\" class=\"ui-nodisc-icon\"><li><a href=\"\">"+data[i].post_title+"</li></ul>");
-
-        $("#beranda").append("<ul data-role =\"listview\" data-inset=\"true\" class=\"ui-nodisc-icon  ui-listview ui-listview-inset ui-corner-all ui-shadow\"><li><a href=\"\"><div><img src=\"/FilkomNews/FilkomNews/www/you tube.png\" style=\"max-width: 108%; min-width: 108%\"></div></a></li></ul>");
-        $("#beranda").append("</a></li></ul>");
+        
 
 
       //   <ul data-role ="listview" data-inset="true" class="ui-nodisc-icon">
@@ -189,45 +181,12 @@
 
       };
     });   
-
-
-    // $('#btn_back').click(function(){
-    //  $.ajax({
-    //    method: "POST",
-    //    url: "ajax.php",
-    //    dataType:'json'
-    //  }).done(function(data){
-    //    if ($iterator > 0){
-    //      $('#txt_nama').html(data[--$iterator].post_title);
-    //      $('#txt_nim').html(data[$iterator].user_id);
-    //      $('#gambar').attr('src','http://file.filkom.ub.ac.id/fileupload/assets/'+data[$iterator].thumb_img);
-    //    } else {
-    //      $('#txt_nama').html(data[$iterator].post_title);
-    //      $('#txt_nim').html(data[$iterator].user_id);
-    //      $('#gambar').attr('src','http://file.filkom.ub.ac.id/fileupload/assets/'+data[$iterator].thumb_img);
-    //    }
-    //  });
-    // });
-
-    // $('#btn_next').click(function(){
-    //  $.ajax({
-    //    method: "POST",
-    //    url: "ajax.php",
-    //    dataType:'json'
-    //  }).done(function(data){
-    //    if ($iterator < $panjang - 1){
-    //      $('#txt_nama').html(data[++$iterator].post_title);
-    //      $('#txt_nim').html(data[$iterator].user_id);
-    //      $('#gambar').attr('src','http://file.filkom.ub.ac.id/fileupload/assets/'+data[$iterator].thumb_img);
-    //    } else {
-    //      $('#txt_nama').html(data[$iterator].post_title);
-    //      $('#txt_nim').html(data[$iterator].user_id);
-    //      $('#gambar').attr('src','http://file.filkom.ub.ac.id/fileupload/assets/'+data[$iterator].thumb_img);
-    //    }
-    //  });
-    // });
   // });
-</script>-->
+</script>
+
+</body>
+
+
 
 <!-- $(\"#beranda\").append(\"<ul data-role =\"listview\" data-inset=\"true\" class=\"ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow\"><li><a href=\"\"><div></div></a></li></ul>\");
         $(\"#beranda\").append(\"</a></li></ul>\"); -->
