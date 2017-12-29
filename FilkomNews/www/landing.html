@@ -134,17 +134,9 @@
       dataType:'json'
     }).done(function(data){     
       $panjang = data.length;                     
-      for (var i = 0; i < $panjang; i++) {
-        // $("body").append("<img src=\"http://file.filkom.ub.ac.id/fileupload/assets/"+data[i].thumb_img+"\">");
-        // $("body").append("<h1>"+data[i].post_title+"</h1>");
-        // $time_modified = data[i].content_modified.split(" ");
-        // $("body").append("<h4>"+$time_modified[0]+"</h4>");
-        // $("body").append("<h4>"+$time_modified[1].substring(0,5)+"</h4>");
-        // $("body").append(data[i].post_content);
-
-        // $("#beranda").append("<ul data-role =\"listview\" data-inset=\"true\" class=\"ui-nodisc-icon\"><li><a href=\"\">"+data[i].post_title+"</li></ul>");
-
-        $("#beranda").append("<ul data-role =\"listview\" data-inset=\"true\" class=\"ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow\"><li class=\"ui-first-child ui-last-child\"><a href=\"\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><div><img src=\"/FilkomNews/FilkomNews/www/you tube.png\" style=\"max-width: 108%; min-width: 108%\"><h2>"+data[i].post_title+"</h2><div class=\"ui-grid-b\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">14-12-2017</p> </div> <div class=\"ui-block-b\"> <p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">10:20</p> </div> <div class=\"ui-block-c\"></div></div></div>");
+      for (var i = 0; i < $panjang; i++) {                
+        $time_modified = data[i].content_modified.split(" ");
+        $("#beranda").append("<ul data-role =\"listview\" data-inset=\"true\" class=\"ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow\"><li class=\"ui-first-child ui-last-child\"><a href=\"\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><div><img src=\"http://file.filkom.ub.ac.id/fileupload/assets/"+data[i].thumb_img+"\" style=\"max-width: 108%; min-width: 108%\"><h2>"+data[i].post_title+"</h2><div class=\"ui-grid-b\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">"+$time_modified[0]+"</p> </div> <div class=\"ui-block-b\"> <p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">"+$time_modified[1].substring(0,5)+"</p> </div> <div class=\"ui-block-c\"></div></div></div>");
         $("#beranda").append("</a></li></ul>");
       };
     });
