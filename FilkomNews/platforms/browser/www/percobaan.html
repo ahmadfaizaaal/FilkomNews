@@ -1,0 +1,73 @@
+<head>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<div id="login">
+		<!-- <h1 id="txt_nama">Nama</h1>		
+		<h1 id="txt_nim">NIM</h1>		
+		<img id="gambar" src="">
+		<button id="btn_back">Back</button>
+		<button id="btn_next">Next</button> -->
+		<!-- http://filkom.ub.ac.id/module/api/conf/get_berita/in -->
+	</div>
+<script type="text/javascript">
+	// $(function(){
+		$panjang = 0;
+		$iterator = 0;
+
+		$.ajax({
+			type: "POST",
+			url: "ajax.php",
+			dataType:'json'
+		}).done(function(data){			
+			$panjang = data.length;											
+			for (var i = 0; i < $panjang; i++) {
+				// $("body").append("<img src=\"http://file.filkom.ub.ac.id/fileupload/assets/"+data[i].thumb_img+"\">");
+				$("body").append("<h1>"+data[i].post_title+"</h1>");
+				$time_modified = data[i].content_modified.split(" ");
+				$("body").append("<h4>"+$time_modified[0]+"</h4>");
+				$("body").append("<h4>"+$time_modified[1].substring(0,5)+"</h4>");
+				$("body").append(data[i].post_content);
+			};
+		});		
+
+
+		// $('#btn_back').click(function(){
+		// 	$.ajax({
+		// 		method: "POST",
+		// 		url: "ajax.php",
+		// 		dataType:'json'
+		// 	}).done(function(data){
+		// 		if ($iterator > 0){
+		// 			$('#txt_nama').html(data[--$iterator].post_title);
+		// 			$('#txt_nim').html(data[$iterator].user_id);
+		// 			$('#gambar').attr('src','http://file.filkom.ub.ac.id/fileupload/assets/'+data[$iterator].thumb_img);
+		// 		} else {
+		// 			$('#txt_nama').html(data[$iterator].post_title);
+		// 			$('#txt_nim').html(data[$iterator].user_id);
+		// 			$('#gambar').attr('src','http://file.filkom.ub.ac.id/fileupload/assets/'+data[$iterator].thumb_img);
+		// 		}
+		// 	});
+		// });
+
+		// $('#btn_next').click(function(){
+		// 	$.ajax({
+		// 		method: "POST",
+		// 		url: "ajax.php",
+		// 		dataType:'json'
+		// 	}).done(function(data){
+		// 		if ($iterator < $panjang - 1){
+		// 			$('#txt_nama').html(data[++$iterator].post_title);
+		// 			$('#txt_nim').html(data[$iterator].user_id);
+		// 			$('#gambar').attr('src','http://file.filkom.ub.ac.id/fileupload/assets/'+data[$iterator].thumb_img);
+		// 		} else {
+		// 			$('#txt_nama').html(data[$iterator].post_title);
+		// 			$('#txt_nim').html(data[$iterator].user_id);
+		// 			$('#gambar').attr('src','http://file.filkom.ub.ac.id/fileupload/assets/'+data[$iterator].thumb_img);
+		// 		}
+		// 	});
+		// });
+	// });
+</script>
+
+</body>
