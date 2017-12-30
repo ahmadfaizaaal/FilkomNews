@@ -24,12 +24,12 @@
       <a href="#mypanel1" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-alt-icon ui-nodisc-icon" style="background-color: #d30000;"></a>
       <a href="" class="ui-btn-right ui-btn ui-icon-search ui-btn-icon-notext ui-alt-icon ui-nodisc-icon" style="background-color: #d30000;"></a>
       <!-- <h1 style="color: white;">Filkom</h1> -->
-      <div style="text-align: center;"><img src="/FilkomNews/FilkomNews/www/filkom2.png" style="max-width: 32%; min-width: 32%;"></div>
+      <div style="text-align: center;"><img src="filkom2.png" style="max-width: 32%; min-width: 32%;"></div>
     </div><!-- /header -->
 
     <div role="main" class="ui-content" id="beranda">      
       <!-- <h3 style="text-align: center;"> Headline News</h3> -->
-      <!-- <img src="/FilkomNews/FilkomNews/www/awal.png" style="max-width: 100%; min-width: 100%"> -->
+      <!-- <img src="awal.png" style="max-width: 100%; min-width: 100%"> -->
       <!-- <div><h3 style="text-align: center;"> Berita</h3></div> -->
       
       <div data-role="page" id="city" class="demo-page" data-dom-cache="true" data-theme="b" data-prev="prevCity" data-next="nextCity" data-url="city">
@@ -47,7 +47,7 @@
         <li>
           <a href="">
             <div>
-              <img src="/FilkomNews/FilkomNews/www/pemandangan.jpg" style="max-width: 108%; min-width: 108%">       
+              <img src="pemandangan.jpg" style="max-width: 108%; min-width: 108%">       
             </div>                         
             <h2>Mahasiswi FILKOM Juara 2 Puteri Kampus Jawa Timur 2017</h2>            
             <div class="ui-grid-b">
@@ -70,7 +70,7 @@
     
     <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="mypanel1">
       <ul data-role="listview">
-        <li class="ui-nodisc-icon"><center><a href="#" data-rel="close"><img src="/FilkomNews/FilkomNews/www/filkom.png" style="max-width: 32%; min-width: 32%;"></a></center></li>
+        <li class="ui-nodisc-icon"><center><a href="#" data-rel="close"><img src="filkom.png" style="max-width: 32%; min-width: 32%;"></a></center></li>
         <li><a href="#page-one">Beranda</a></li>
         <li><a href="#page-two">Tentang Kami</a></li>        
       </ul>
@@ -86,7 +86,7 @@
 
     $.ajax({
       type: "POST",
-      url: "ajax.php",
+      url: "coba.php",
       dataType:'json'
     }).done(function(data){     
       $panjang = data.length;                     
@@ -96,7 +96,7 @@
         $("#beranda").append("<ul data-role =\"listview\" data-inset=\"true\" class=\"ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow\"><li class=\"ui-first-child ui-last-child\"><a href=\"#page-"+(i+1)+"\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><div><img src=\"http://file.filkom.ub.ac.id/fileupload/assets/"+data[i].thumb_img+"\" style=\"max-width: 108%; min-width: 108%\"><h2>"+data[i].post_title+"</h2><div class=\"ui-grid-b\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">"+$time_modified[0]+"</p> </div> <div class=\"ui-block-b\"> <p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">"+$time_modified[1].substring(0,5)+"</p> </div> <div class=\"ui-block-c\"></div></div></div>");
         $("#beranda").append("</a></li></ul>");
         // Menambahkan Halaman
-        $("body").append("<div data-role=\"page\" id=\"page-"+(i+1)+"\" data-theme=\"b\" data-url=\"page-"+(i+1)+"\" tabindex=\"0\" class=\"ui-page ui-page-theme-b ui-page-header-fixed\" style=\"padding-top: 44px;\"><div align=\"right\" data-role=\"header\" data-position=\"fixed\" style=\"background-color: #d30000; text-align: left;\" role=\"banner\" class=\"ui-header ui-bar-inherit ui-header-fixed slidedown\"><a href=\"#page-one\" class=\"ui-btn-left ui-alt-icon ui-nodisc-icon ui-btn ui-btn-c ui-icon-carat-l ui-btn-icon-notext ui-corner-all\" style=\"background-color: #d30000; color: white;\" data-role=\"button\" role=\"button\"></a><h2 style=\"color: white;\" class=\"ui-title\" role=\"heading\" aria-level=\"1\">Berita</h2></div><img src=\"http://file.filkom.ub.ac.id/fileupload/assets/"+data[i].thumb_img+"\" style=\"max-width: 100%; min-width: 100%\"><div role=\"main\" class=\"ui-content\"><div><h2>"+data[i].post_title+"</h2></div><div class=\"ui-grid-b\" style=\"margin-top: -8%;\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">"+$time_modified[0]+"</p></div><div class=\"ui-block-b\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">"+$time_modified[1].substring(0,5)+"</p></div></div><div><div><p>"+data[i].post_content+"</p></div><div style=\"margin-top: 7%;\"><hr><p style=\"font-style: italic;\">Bagikan</p><div style=\"margin-top: -2%;\"><a href=\"#\"><img src=\"/FilkomNews/FilkomNews/www/facebook.jpg\" alt=\"Facebook\"></a><a href=\"#\"><img src=\"/FilkomNews/FilkomNews/www/twitter.png\" alt=\"Twitter\"></a><a href=\"#\"><img src=\"/FilkomNews/FilkomNews/www/line.png\" alt=\"Line\"></a></div></div></div>");
+        $("body").append("<div data-role=\"page\" id=\"page-"+(i+1)+"\" data-theme=\"b\" data-url=\"page-"+(i+1)+"\" tabindex=\"0\" class=\"ui-page ui-page-theme-b ui-page-header-fixed\" style=\"padding-top: 44px;\"><div align=\"right\" data-role=\"header\" data-position=\"fixed\" style=\"background-color: #d30000; text-align: left;\" role=\"banner\" class=\"ui-header ui-bar-inherit ui-header-fixed slidedown\"><a href=\"#page-one\" class=\"ui-btn-left ui-alt-icon ui-nodisc-icon ui-btn ui-btn-c ui-icon-carat-l ui-btn-icon-notext ui-corner-all\" style=\"background-color: #d30000; color: white;\" data-role=\"button\" role=\"button\"></a><h2 style=\"color: white;\" class=\"ui-title\" role=\"heading\" aria-level=\"1\">Berita</h2></div><img src=\"http://file.filkom.ub.ac.id/fileupload/assets/"+data[i].thumb_img+"\" style=\"max-width: 100%; min-width: 100%\"><div role=\"main\" class=\"ui-content\"><div><h2>"+data[i].post_title+"</h2></div><div class=\"ui-grid-b\" style=\"margin-top: -8%;\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">"+$time_modified[0]+"</p></div><div class=\"ui-block-b\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">"+$time_modified[1].substring(0,5)+"</p></div></div><div><div><p>"+data[i].post_content+"</p></div><div style=\"margin-top: 7%;\"><hr><p style=\"font-style: italic;\">Bagikan</p><div style=\"margin-top: -2%;\"><a href=\"#\"><img src=\"facebook.jpg\" alt=\"Facebook\"></a><a href=\"#\"><img src=\"twitter.png\" alt=\"Twitter\"></a><a href=\"#\"><img src=\"line.png\" alt=\"Line\"></a></div></div></div>");
 
       };
     });
