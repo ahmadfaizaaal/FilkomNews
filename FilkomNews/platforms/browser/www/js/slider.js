@@ -21,18 +21,13 @@ $( document ).one( "pagecreate", ".demo-page", function() {
     $( document ).on( "swipeleft", ".ui-page", function( event ) {
         // Get the filename of the next page. We stored that in the data-next
         // attribute in the original markup.
-        // var next = $( this ).jqmData( "next" );
+        var next = $( this ).jqmData( "next" );
         // Check if there is a next page and
         // swipes may also happen when the user highlights text, so ignore those.
         // We're only interested in swipes on the page.
-        // if ( next && ( event.target === $( this )[ 0 ] ) ) {
-        //     navnext( next );
-        // }
-        var currPage = $(":mobile-pagecontainer").pagecontainer("getActivePage");
-        var next = $(currPage).jqmData( "next" );
-        if ( next ) {
+        if ( next && ( event.target === $( this )[ 0 ] ) ) {
             navnext( next );
-        }
+        }        
     });
     // Navigate to the next page when the "next" button in the footer is clicked
     $( document ).on( "click", ".next", function() {
