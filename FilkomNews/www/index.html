@@ -125,15 +125,50 @@
       <div data-role="header" data-position="fixed" style="background-color: #d30000;">
         <div>
             <a href="#page-one" id="foo" class="ui-btn-left ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all ui-alt-icon ui-nodisc-icon" style="/*background-color: #d30000;*/ text-align: left;"></a>
+            <!-- <h1 style="color: white;">Search</h1> -->
             <div style="margin-left: 11%; width: 87%;">
                 <form>
-                    <input data-type="search" id="filterControlgroup-input">
+                    <input data-type="search" id="filterControlgroup-input" placeholder="Cari berita">
                 </form>
             </div>
         </div>
       </div><!-- /header -->
 
-      <div role="main" class="ui-content" id="hasilCari">      
+      <div role="main" class="ui-content">
+          <ul data-role="listview" data-filter="true" data-filter-reveal="true" data-inset="false" data-input="#filterControlgroup-input" class="ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow" id="hasilCari">
+            <!-- <li class="ui-first-child ui-last-child">
+                <a href="#page" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <div><img src="" style="max-width: 108%; min-width: 108%">
+                        <h2>post title</h2>
+                        <div class="ui-grid-b">
+                            <div class="ui-block-a">
+                                <p class="ui-corner-all ui-shadow" style="background-color: grey; color: white; text-align: center;">time</p>
+                            </div>
+                            <div class="ui-block-b">
+                                <p class="ui-corner-all ui-shadow" style="background-color: red; color: white; text-align: center;">time</p>
+                            </div>
+                            <div class="ui-block-c"></div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="ui-first-child ui-last-child">
+                <a href="#page" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <div><img src="" style="max-width: 108%; min-width: 108%">
+                        <h2>mahasiswa</h2>
+                        <div class="ui-grid-b">
+                            <div class="ui-block-a">
+                                <p class="ui-corner-all ui-shadow" style="background-color: grey; color: white; text-align: center;">time</p>
+                            </div>
+                            <div class="ui-block-b">
+                                <p class="ui-corner-all ui-shadow" style="background-color: red; color: white; text-align: center;">time</p>
+                            </div>
+                            <div class="ui-block-c"></div>
+                        </div>
+                    </div>
+                </a>
+            </li> -->
+        </ul>      
           <!-- <div data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Cari berita" data-inset="true" data-input="#filterControlgroup-input">
               
           </div> -->
@@ -190,8 +225,8 @@
         $time_modified = data[i].content_modified.split(" ");
         $("#beranda").append("<ul data-role =\"listview\" data-filter=\"true\" data-inset=\"true\" class=\"ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow\"><li class=\"ui-first-child ui-last-child\"><a href=\"#page-"+(i+1)+"\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><div><img src=\""+data[i].thumb_img+"\" style=\"max-width: 108%; min-width: 108%\"><h2>"+data[i].post_title+"</h2><div class=\"ui-grid-b\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">"+$time_modified[0]+"</p> </div> <div class=\"ui-block-b\"> <p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">"+$time_modified[1].substring(0,5)+"</p> </div> <div class=\"ui-block-c\"></div></div></div>");
         $("#beranda").append("</a></li></ul>");
-        $("#hasilCari").append("<ul data-role =\"listview\" data-filter-reveal=\"true\" data-filter-placeholder=\"Cari berita\" data-inset=\"true\"  class=\"ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow\"><li class=\"ui-first-child ui-last-child\"><a href=\"#page-"+(i+1)+"\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><div><img src=\""+data[i].thumb_img+"\" style=\"max-width: 108%; min-width: 108%\"><h2>"+data[i].post_title+"</h2><div class=\"ui-grid-b\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">"+$time_modified[0]+"</p> </div> <div class=\"ui-block-b\"> <p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">"+$time_modified[1].substring(0,5)+"</p> </div> <div class=\"ui-block-c\"></div></div></div>");
-        $("#hasilCari").append("</a></li></ul>");
+        $("#hasilCari").append("<li class=\"ui-first-child ui-last-child\"><a href=\"#page-"+(i+1)+"\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><div><img src=\""+data[i].thumb_img+"\" style=\"max-width: 108%; min-width: 108%\"><h2>"+data[i].post_title+"</h2><div class=\"ui-grid-b\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">"+$time_modified[0]+"</p> </div> <div class=\"ui-block-b\"> <p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">"+$time_modified[1].substring(0,5)+"</p> </div> <div class=\"ui-block-c\"></div></div></div>");
+        $("#hasilCari").append("</a></li>");
         // Menambahkan Halaman
         $("body").append("<div data-role=\"page\" id=\"page-"+(i+1)+"\" data-theme=\"b\" data-url=\"page-"+(i+1)+"\" tabindex=\"0\" class=\"ui-page ui-page-theme-b ui-page-header-fixed\" style=\"padding-top: 44px;\"><div align=\"right\" data-role=\"header\" data-position=\"fixed\" style=\"background-color: #d30000; text-align: left;\" role=\"banner\" class=\"ui-header ui-bar-inherit ui-header-fixed slidedown\"><a href=\"#page-one\" class=\"ui-btn-left ui-alt-icon ui-nodisc-icon ui-btn ui-btn-c ui-icon-carat-l ui-btn-icon-notext ui-corner-all\" style=\"background-color: #d30000; color: white;\" data-role=\"button\" role=\"button\"></a><h2 style=\"color: white;\" class=\"ui-title\" role=\"heading\" aria-level=\"1\">Berita</h2></div><img src=\""+data[i].thumb_img+"\" style=\"max-width: 100%; min-width: 100%\"><div role=\"main\" class=\"ui-content\"><div><h2>"+data[i].post_title+"</h2></div><div class=\"ui-grid-b\" style=\"margin-top: -8%;\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">"+$time_modified[0]+"</p></div><div class=\"ui-block-b\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">"+$time_modified[1].substring(0,5)+"</p></div></div><div><div align=\"justify\"><p>"+data[i].post_content+"</p></div><div style=\"margin-top: 7%;\"><hr><p style=\"font-style: italic;\">Bagikan</p><div style=\"margin-top: -2%;\"><a href=\"#\"><img src=\"facebook.jpg\" alt=\"Facebook\"></a><a href=\"#\"><img src=\"twitter.png\" alt=\"Twitter\"></a><a href=\"#\"><img src=\"line.png\" alt=\"Line\"></a></div></div></div>");
 
