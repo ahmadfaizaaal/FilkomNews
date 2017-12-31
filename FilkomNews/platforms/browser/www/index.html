@@ -136,42 +136,9 @@
 
       <div role="main" class="ui-content">
           <ul data-role="listview" data-filter="true" data-filter-reveal="true" data-inset="false" data-input="#filterControlgroup-input" class="ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow" id="hasilCari">
-            <!-- <li class="ui-first-child ui-last-child">
-                <a href="#page" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <div><img src="" style="max-width: 108%; min-width: 108%">
-                        <h2>post title</h2>
-                        <div class="ui-grid-b">
-                            <div class="ui-block-a">
-                                <p class="ui-corner-all ui-shadow" style="background-color: grey; color: white; text-align: center;">time</p>
-                            </div>
-                            <div class="ui-block-b">
-                                <p class="ui-corner-all ui-shadow" style="background-color: red; color: white; text-align: center;">time</p>
-                            </div>
-                            <div class="ui-block-c"></div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="ui-first-child ui-last-child">
-                <a href="#page" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <div><img src="" style="max-width: 108%; min-width: 108%">
-                        <h2>mahasiswa</h2>
-                        <div class="ui-grid-b">
-                            <div class="ui-block-a">
-                                <p class="ui-corner-all ui-shadow" style="background-color: grey; color: white; text-align: center;">time</p>
-                            </div>
-                            <div class="ui-block-b">
-                                <p class="ui-corner-all ui-shadow" style="background-color: red; color: white; text-align: center;">time</p>
-                            </div>
-                            <div class="ui-block-c"></div>
-                        </div>
-                    </div>
-                </a>
-            </li> -->
+            
+
         </ul>      
-          <!-- <div data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Cari berita" data-inset="true" data-input="#filterControlgroup-input">
-              
-          </div> -->
       </div><!-- /content -->     
       
       
@@ -223,7 +190,7 @@
       for (var i = 0; i < $panjang; i++) {                
         // Menambahkan Tumbnails
         $time_modified = data[i].content_modified.split(" ");
-        $("#beranda").append("<ul data-role =\"listview\" data-filter=\"true\" data-inset=\"true\" class=\"ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow\"><li class=\"ui-first-child ui-last-child\"><a href=\"#page-"+(i+1)+"\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><div><img src=\""+data[i].thumb_img+"\" style=\"max-width: 108%; min-width: 108%\"><h2>"+data[i].post_title+"</h2><div class=\"ui-grid-b\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">"+$time_modified[0]+"</p> </div> <div class=\"ui-block-b\"> <p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">"+$time_modified[1].substring(0,5)+"</p> </div> <div class=\"ui-block-c\"></div></div></div>");
+        $("#beranda").append("<ul data-role =\"listview\" data-filter=\"true\" data-inset=\"false\" class=\"ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow\"><li class=\"ui-first-child ui-last-child\"><a href=\"#page-"+(i+1)+"\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><div><img src=\""+data[i].thumb_img+"\" style=\"max-width: 108%; min-width: 108%\"><h2>"+data[i].post_title+"</h2><div class=\"ui-grid-b\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">"+$time_modified[0]+"</p> </div> <div class=\"ui-block-b\"> <p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">"+$time_modified[1].substring(0,5)+"</p> </div> <div class=\"ui-block-c\"></div></div></div>");
         $("#beranda").append("</a></li></ul>");
         $("#hasilCari").append("<li class=\"ui-first-child ui-last-child\"><a href=\"#page-"+(i+1)+"\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><div><img src=\""+data[i].thumb_img+"\" style=\"max-width: 108%; min-width: 108%\"><h2>"+data[i].post_title+"</h2><div class=\"ui-grid-b\"><div class=\"ui-block-a\"><p class=\"ui-corner-all ui-shadow\" style=\"background-color: grey; color: white; text-align: center;\">"+$time_modified[0]+"</p> </div> <div class=\"ui-block-b\"> <p class=\"ui-corner-all ui-shadow\" style=\"background-color: red; color: white; text-align: center;\">"+$time_modified[1].substring(0,5)+"</p> </div> <div class=\"ui-block-c\"></div></div></div>");
         $("#hasilCari").append("</a></li>");
